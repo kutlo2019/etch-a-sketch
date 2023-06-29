@@ -2,10 +2,14 @@ function createGrid(grid, size) {
     grid.innerHTML = "";
     for (let i = 0; i < size * size; i++) {
         const gridSquare = document.createElement('div');
-        gridSquare.classList.add('.grid-square');
+        gridSquare.classList.add('grid-square');
+        const width = 400 / size;
+        gridSquare.style.width = `${width}px`;
+        gridSquare.style.height = `${width}px`;
         gridSquare.addEventListener('mouseover', e => {
             e.target.style.backgroundColor = 'aqua';
         });
+        grid.style.gridTemplateColumns = `repeat(${size}, ${width}px)`;
         grid.appendChild(gridSquare)
     }
 }
@@ -21,5 +25,5 @@ screenSizer.addEventListener('click', e => {
     if (size > 100) {
         size = 100;
     }
-
+    createGrid(grid, size);
 });

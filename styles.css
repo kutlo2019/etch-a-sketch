@@ -10,13 +10,9 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(16, 25px);
     gap: 0;
 }
 
 .grid > div {
-    border: 1px solid blue;
     background-color: red;
-    width: 25px;
-    height: 25px;
 }
